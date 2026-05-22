@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter1_project/database/db_controller.dart';
-import 'package:flutter1_project/database/prefs/shared_pref_controller.dart';
-import 'package:flutter1_project/l10n/app_localizations.dart';
-import 'package:flutter1_project/provider/language_provider.dart';
-import 'package:flutter1_project/screens/auth/login_screen.dart';
-import 'package:flutter1_project/screens/auth/register_screen.dart';
-import 'package:flutter1_project/screens/core/launch_screen.dart';
-import 'package:flutter1_project/screens/core/onboarding_screen.dart';
-import 'package:flutter1_project/screens/tabs/main_screen.dart';
+import 'package:github_training_project/database/db_controller.dart';
+import 'package:github_training_project/database/prefs/shared_pref_controller.dart';
+import 'package:github_training_project/l10n/app_localizations.dart';
+import 'package:github_training_project/provider/language_provider.dart';
+import 'package:github_training_project/screens/auth/register_screen.dart';
+import 'package:github_training_project/screens/core/launch_screen.dart';
+import 'package:github_training_project/screens/core/onboarding_screen.dart';
+import 'package:github_training_project/screens/tabs/main_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
@@ -60,6 +59,9 @@ class MyApp extends StatelessWidget {
                             OnboardingScreen(),
                     '/main_screen': (context) =>
                         MainScreen(),
+                    '/register_screen':
+                        (context) =>
+                            RegisterScreen(),
                   },
                 ),
           ),

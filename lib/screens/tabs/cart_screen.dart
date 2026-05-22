@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter1_project/widgets/my_text.dart';
+import 'package:github_training_project/widgets/my_text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartScreen extends StatelessWidget {

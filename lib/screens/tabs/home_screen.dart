@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter1_project/l10n/app_localizations.dart';
-import 'package:flutter1_project/model/trending_item.dart';
-import 'package:flutter1_project/widgets/my_text.dart';
+import 'package:github_training_project/l10n/app_localizations.dart';
+import 'package:github_training_project/model/trending_item.dart';
+import 'package:github_training_project/widgets/my_text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -9,7 +9,8 @@ class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeScreen> createState() =>
+      _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -49,7 +50,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(initialPage: 2, viewportFraction: 0.85);
+    _pageController = PageController(
+      initialPage: 2,
+      viewportFraction: 0.85,
+    );
   }
 
   @override
@@ -65,13 +69,18 @@ class _HomeScreenState extends State<HomeScreen> {
       extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment:
+              CrossAxisAlignment.start,
           children: [
             SizedBox(height: 63.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 28.w),
+              padding: EdgeInsets.symmetric(
+                horizontal: 28.w,
+              ),
               child: MyText(
-                text: AppLocalizations.of(context)!.good_morning,
+                text: AppLocalizations.of(
+                  context,
+                )!.good_morning,
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
                 color: Color(0xFF5F5F5F),
@@ -79,11 +88,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SizedBox(height: 4.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 28.w),
+              padding: EdgeInsets.symmetric(
+                horizontal: 28.w,
+              ),
               child: Row(
                 children: [
                   MyText(
-                    text: AppLocalizations.of(context)!.my_name,
+                    text: AppLocalizations.of(
+                      context,
+                    )!.my_name,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w600,
                     color: Colors.black,
@@ -95,7 +108,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icon(
                           Icons.notifications,
                           size: 24,
-                          color: Color(0xFF384144),
+                          color: Color(
+                            0xFF384144,
+                          ),
                         ),
                         Positioned(
                           top: 0,
@@ -104,12 +119,19 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 12.w,
                             height: 12.h,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              color: Color(0xFFFEC54B),
-                              border: BoxBorder.all(
-                                color: Colors.white,
-                                width: 2.w,
+                              borderRadius:
+                                  BorderRadius.circular(
+                                    50,
+                                  ),
+                              color: Color(
+                                0xFFFEC54B,
                               ),
+                              border:
+                                  BoxBorder.all(
+                                    color: Colors
+                                        .white,
+                                    width: 2.w,
+                                  ),
                             ),
                           ),
                         ),
@@ -131,9 +153,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                     clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(18.r),
+                      borderRadius:
+                          BorderRadius.circular(
+                            18.r,
+                          ),
                     ),
-                    margin: EdgeInsetsDirectional.only(start: 10.w, end: 28.w),
+                    margin:
+                        EdgeInsetsDirectional.only(
+                          start: 10.w,
+                          end: 28.w,
+                        ),
                     child: Stack(
                       children: [
                         Image.asset(
@@ -146,11 +175,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           bottom: 0,
                           start: 0,
                           child: Padding(
-                            padding: const EdgeInsets.all(20),
+                            padding:
+                                const EdgeInsets.all(
+                                  20,
+                                ),
                             child: MyText(
-                              text: 'Fresh Fruits\n Delivery',
+                              text:
+                                  'Fresh Fruits\n Delivery',
                               fontSize: 16.sp,
-                              fontWeight: FontWeight.w600,
+                              fontWeight:
+                                  FontWeight.w600,
                               color: Colors.white,
                             ),
                           ),
@@ -162,11 +196,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                     clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(18.r),
+                      borderRadius:
+                          BorderRadius.circular(
+                            18.r,
+                          ),
                     ),
                     height: 162.h,
                     width: 283.w,
-                    margin: EdgeInsetsDirectional.only(end: 10.w, start: 28.w),
+                    margin:
+                        EdgeInsetsDirectional.only(
+                          end: 10.w,
+                          start: 28.w,
+                        ),
 
                     child: Stack(
                       children: [
@@ -180,11 +221,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           bottom: 0,
                           start: 0,
                           child: Padding(
-                            padding: const EdgeInsets.all(20),
+                            padding:
+                                const EdgeInsets.all(
+                                  20,
+                                ),
                             child: MyText(
-                              text: 'Recomended\n Recipe Today',
+                              text:
+                                  'Recomended\n Recipe Today',
                               fontSize: 16.sp,
-                              fontWeight: FontWeight.w600,
+                              fontWeight:
+                                  FontWeight.w600,
                               color: Colors.white,
                             ),
                           ),
@@ -197,17 +243,24 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SizedBox(height: 30.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 28.w),
+              padding: EdgeInsets.symmetric(
+                horizontal: 28.w,
+              ),
               child: Row(
                 children: [
                   MyText(
-                    text: AppLocalizations.of(context)!.categories,
+                    text: AppLocalizations.of(
+                      context,
+                    )!.categories,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w600,
                     color: Colors.black,
                   ),
                   Spacer(),
-                  Icon(Icons.arrow_forward, color: Colors.black),
+                  Icon(
+                    Icons.arrow_forward,
+                    color: Colors.black,
+                  ),
                 ],
               ),
             ),
@@ -217,83 +270,118 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: categoriesIcons.length,
-                itemBuilder: (context, index) => Container(
-                  margin: EdgeInsetsDirectional.only(
-                    start: index == 0 ? 28.w : 0,
-                    end: index == 8 ? 28.w : 10.w,
-                  ),
-                  padding: EdgeInsets.all(16.r),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18.r),
-                    color: Colors.white,
-                  ),
-                  width: 70.w,
-                  height: 70.h,
-                  child: SvgPicture.asset(
-                    categoriesIcons[index],
-                    colorFilter: ColorFilter.mode(
-                      Color(0xFF7A1E76),
-                      BlendMode.srcIn,
+                itemBuilder: (context, index) =>
+                    Container(
+                      margin:
+                          EdgeInsetsDirectional.only(
+                            start: index == 0
+                                ? 28.w
+                                : 0,
+                            end: index == 8
+                                ? 28.w
+                                : 10.w,
+                          ),
+                      padding: EdgeInsets.all(
+                        16.r,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(
+                              18.r,
+                            ),
+                        color: Colors.white,
+                      ),
+                      width: 70.w,
+                      height: 70.h,
+                      child: SvgPicture.asset(
+                        categoriesIcons[index],
+                        colorFilter:
+                            ColorFilter.mode(
+                              Color(0xFF7A1E76),
+                              BlendMode.srcIn,
+                            ),
+                      ),
                     ),
-                  ),
-                ),
               ),
             ),
 
             SizedBox(height: 30.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 28.w),
+              padding: EdgeInsets.symmetric(
+                horizontal: 28.w,
+              ),
               child: Row(
                 children: [
                   MyText(
-                    text: AppLocalizations.of(context)!.trending_deals,
+                    text: AppLocalizations.of(
+                      context,
+                    )!.trending_deals,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w600,
                     color: Colors.black,
                   ),
                   Spacer(),
-                  Icon(Icons.arrow_forward, color: Colors.black),
+                  Icon(
+                    Icons.arrow_forward,
+                    color: Colors.black,
+                  ),
                 ],
               ),
             ),
             SizedBox(height: 13.h),
             GridView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 28.w),
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: trendingItems.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisExtent: 200.h,
-                mainAxisSpacing: 20.h,
-                crossAxisSpacing: 20.w,
-                crossAxisCount: 2,
+              padding: EdgeInsets.symmetric(
+                horizontal: 28.w,
               ),
+              shrinkWrap: true,
+              physics:
+                  NeverScrollableScrollPhysics(),
+              itemCount: trendingItems.length,
+              gridDelegate:
+                  SliverGridDelegateWithFixedCrossAxisCount(
+                    mainAxisExtent: 200.h,
+                    mainAxisSpacing: 20.h,
+                    crossAxisSpacing: 20.w,
+                    crossAxisCount: 2,
+                  ),
               itemBuilder: (context, index) => SizedBox(
                 width: 200.w,
                 height: 200.h,
                 child: Stack(
                   children: [
-                    Image.asset(trendingItems[index].image),
+                    Image.asset(
+                      trendingItems[index].image,
+                    ),
                     Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 14.w,
-                        vertical: 14.w,
-                      ),
+                      padding:
+                          EdgeInsets.symmetric(
+                            horizontal: 14.w,
+                            vertical: 14.w,
+                          ),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment:
+                            CrossAxisAlignment
+                                .start,
                         children: [
                           IconButton(
-                            padding: EdgeInsets.all(0),
-                            alignment: Alignment.topLeft,
+                            padding:
+                                EdgeInsets.all(0),
+                            alignment:
+                                Alignment.topLeft,
                             iconSize: 24.r,
                             onPressed: () => setState(
-                              () => trendingItems[index].isFavorite =
-                                  !trendingItems[index].isFavorite,
+                              () =>
+                                  trendingItems[index]
+                                          .isFavorite =
+                                      !trendingItems[index]
+                                          .isFavorite,
                             ),
 
                             icon: Icon(
                               Icons.favorite,
-                              color: trendingItems[index].isFavorite
+                              color:
+                                  trendingItems[index]
+                                      .isFavorite
                                   ? Colors.red
                                   : Colors.white,
                               size: 24.r,
@@ -303,17 +391,23 @@ class _HomeScreenState extends State<HomeScreen> {
                           MyText(
                             text: getTranslatedTitle(
                               context,
-                              trendingItems[index].title,
+                              trendingItems[index]
+                                  .title,
                             ),
                             fontSize: 18.sp,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFFF2F2F2),
+                            fontWeight:
+                                FontWeight.w500,
+                            color: Color(
+                              0xFFF2F2F2,
+                            ),
                           ),
                           SizedBox(height: 6.h),
                           MyText(
-                            text: '\$${trendingItems[index].price}',
+                            text:
+                                '\$${trendingItems[index].price}',
                             fontSize: 14.sp,
-                            fontWeight: FontWeight.w700,
+                            fontWeight:
+                                FontWeight.w700,
                             color: Colors.white,
                           ),
                         ],
@@ -329,16 +423,27 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  String getTranslatedTitle(BuildContext context, String key) {
+  String getTranslatedTitle(
+    BuildContext context,
+    String key,
+  ) {
     switch (key) {
       case 'avocado':
-        return AppLocalizations.of(context)!.avocado;
+        return AppLocalizations.of(
+          context,
+        )!.avocado;
       case 'broccoli':
-        return AppLocalizations.of(context)!.broccoli;
+        return AppLocalizations.of(
+          context,
+        )!.broccoli;
       case 'tomatoes':
-        return AppLocalizations.of(context)!.tomatoes;
+        return AppLocalizations.of(
+          context,
+        )!.tomatoes;
       case 'grapes':
-        return AppLocalizations.of(context)!.grapes;
+        return AppLocalizations.of(
+          context,
+        )!.grapes;
       default:
         return key;
     }

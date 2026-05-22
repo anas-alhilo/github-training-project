@@ -1,27 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:flutter1_project/l10n/app_localizations.dart';
-import 'package:flutter1_project/widgets/my_text.dart';
+import 'package:github_training_project/l10n/app_localizations.dart';
+import 'package:github_training_project/widgets/my_text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:github_training_project/l10n/app_localizations.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
   @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
+  State<OnboardingScreen> createState() =>
+      _OnboardingScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen> {
+class _OnboardingScreenState
+    extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFBFBFB),
       body: Material(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment:
+              CrossAxisAlignment.center,
           children: [
             SizedBox(height: 123.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 36.w),
+              padding: EdgeInsets.symmetric(
+                horizontal: 36.w,
+              ),
               child: Image.asset(
                 'images/img_onboarding.png',
                 height: 180.w,
@@ -31,7 +37,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
             SizedBox(height: 132.h),
             MyText(
-              text: AppLocalizations.of(context)!.fast_and_responsibily,
+              text: AppLocalizations.of(
+                context,
+              )!.fast_and_responsibily,
               fontSize: 24,
               fontWeight: FontWeight.w700,
             ),
@@ -43,10 +51,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
             SizedBox(height: 71.h),
             ElevatedButton(
-              onPressed: () => Navigator.pushNamed(context, '/register_screen'),
+              onPressed: () =>
+                  Navigator.pushNamed(
+                    context,
+                    '/register_screen',
+                  ),
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.r),
+                  borderRadius:
+                      BorderRadius.circular(30.r),
                   side: BorderSide.none,
                 ),
                 shadowColor: Colors.transparent,
@@ -54,7 +67,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 minimumSize: Size(318.w, 60.h),
               ),
               child: MyText(
-                text: AppLocalizations.of(context)!.create_an_account,
+                text: AppLocalizations.of(
+                  context,
+                )!.create_an_account,
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
                 color: Colors.white,
@@ -62,18 +77,28 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
             SizedBox(height: 18.h),
             ElevatedButton(
-              onPressed: () => Navigator.pushNamed(context, '/login_screen'),
+              onPressed: () =>
+                  Navigator.pushNamed(
+                    context,
+                    '/login_screen',
+                  ),
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.r),
-                  side: BorderSide(color: Colors.black, width: 2.w),
+                  borderRadius:
+                      BorderRadius.circular(30.r),
+                  side: BorderSide(
+                    color: Colors.black,
+                    width: 2.w,
+                  ),
                 ),
                 shadowColor: Colors.transparent,
                 backgroundColor: Colors.white,
                 minimumSize: Size(318.w, 60.h),
               ),
               child: MyText(
-                text: AppLocalizations.of(context)!.login,
+                text: AppLocalizations.of(
+                  context,
+                )!.login,
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
                 color: Colors.black,

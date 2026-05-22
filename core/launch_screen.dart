@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:github_training_project/screens/auth/login_screen.dart';
+import 'package:github_training_project/database/prefs/shared_pref_controller.dart';
+import 'package:github_training_project/screens/core/onboarding_screen.dart';
+import 'package:github_training_project/screens/tabs/main_screen.dart';
 import 'package:github_training_project/widgets/my_text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,36 +18,34 @@ class _LaunchScreenState
   @override
   void initState() {
     super.initState();
-
-    Future.delayed(
-      const Duration(seconds: 3),
-      () {
-        if (!mounted) return;
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) =>
-                const LoginScreen(),
-          ),
-        );
-      },
-    );
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) =>
+              SharedPrefController()
+                      .getValue<bool>(
+                        PrefKeys.isLogin.name,
+                      ) ??
+                  false
+              ? MainScreen()
+              : OnboardingScreen(),
+        ),
+      );
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: const Color(0xFFFEC54B),
+      color: Color(0xFFFEC54B),
       child: Column(
         children: [
           SizedBox(height: 365.h),
-
           Image.asset(
-            'assets/images/icon_launch_screen.png',
+            'images/icon_launch_screen.png',
           ),
-
           SizedBox(height: 38.h),
-
           MyText(
             text: 'Fresh Fruits',
             fontSize: 38,
